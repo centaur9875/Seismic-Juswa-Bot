@@ -1,112 +1,88 @@
-# Seismic-Juswa-Bot
+Seismic-Juswa-Bot - JUSWA Airdrops
+A multi-wallet deployer and token transfer bot for the Seismic platform, with support for deploying custom ERC-20 tokens and transferring them across multiple wallets.
 
-🚀 How to Run the Seismic Token Contract Deployment and Airdrop Script
-Welcome to the Seismic Token Contract Deployment and Airdrop project! This guide will walk you through the steps to run the code, deploy a Seismic token contract, and execute a token airdrop.
+Register
+Register here (Seismic Devnet)
 
-Prerequisites 📋
-Before you begin, ensure that you have the following:
+🌟 Features
+Multi-wallet support (via environment variables)
 
-Node.js: Install Node.js (LTS version is recommended).
+Deploy custom ERC-20 tokens
 
-Git: You need Git to clone the repository and interact with your version control.
+Automatic wallet deployment and token creation
 
-Private Keys: You'll need to have access to Ethereum private keys for the deployment.
+Batch token transfers to random addresses
 
-Step 1: Clone the Repository 🔥
-To start, clone the project repository to your local machine.
+Proxy support (optional)
 
-bash
-Copy
-Edit
-git clone https://github.com/centaur9875/Seismic-Juswa-Bot.git
-cd Seismic-Juswa-Bot
-Step 2: Install Dependencies 🧩
-Run the following command to install the required packages and dependencies.
+Easy configuration via CLI
 
-bash
-Copy
-Edit
+Graceful error handling
+
+👌 Prerequisites
+Node.js (v16 or higher)
+
+npm (Node Package Manager)
+
+Ethereum private keys for wallet deployment
+
+Seismic RPC URL for devnet interaction
+
+🛠️ Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/seismic-multi-wallet-deployer.git
+cd seismic-multi-wallet-deployer
+```
+2. Install dependencies:
+```bash
 npm install
-This will install the following packages:
+```
+3. Create a .env file and add your private keys:
+```bash
+PRIVATE_KEYS=0xYourPrivateKey1,0xYourPrivateKey2
+```
+📝 Configuration
+1.(Optional) Set up proxy support by creating a proxies.txt file:
+```bash
+nano proxies.txt
+```
+Example:
+```bash
+http://user:pass@host:port
+socks5://user:pass@host:port
+```
+2. Ensure the Seismic RPC URL is correctly set in your .env file or directly in the code:
+```bash
+SEISMIC_RPC_URL=https://node-2.seismicdev.net/rpc
+```
+🚀 Usage
+Run the deployer bot:
+```bash
+npm run start
+```
+The bot will prompt you to:
 
-ethers: Ethereum library for interacting with contracts.
+Enter the token name, symbol, and total supply
 
-fs: File system module for saving contract files.
+Choose whether you want to transfer tokens after deployment
 
-solc: Solidity compiler.
+Set the number of transfers and amount per transfer
 
-dotenv: To load environment variables from .env file.
+⚙️ Configuration Options
+You can modify the following settings in index.js:
 
-readline: For reading input from the command line.
+-PRIVATE_KEYS: Set your Ethereum private keys for wallet deployment
+-SEISMIC_RPC_URL: Set the Seismic devnet RPC URL
+-rateLimitConfig: Adjust rate limiting parameters (if any proxies are used)
+-numTransfers: Set the number of token transfers per wallet
+-amountPerTransfer: Set the amount of tokens per transfer
 
-crypto: For generating secure random data.
+📛 Support
+Join our Telegram channel for updates and support: https://t.me/juswaairdrops
 
-Step 3: Set Up Environment Variables 🔑
-Create a .env file in the root directory and add your private keys. This file will store sensitive information such as private keys used to deploy the contract.
+⚠️ Disclaimer
+This bot is for educational purposes only. Use at your own risk and ensure compliance with Seismic's terms of service.
 
-Example .env file:
-
-ini
-Copy
-Edit
-PRIVATE_KEYS="0xYourPrivateKey1,0xYourPrivateKey2"
-Each private key should be separated by a comma and without spaces.
-
-Step 4: Prepare the Contract Source 📜
-The script will deploy a Seismic Token contract. This contract is written in Solidity. By default, the contract source is included in the script. However, you can modify it as needed.
-
-Step 5: Run the Deployment Script 🏗️
-Once everything is set up, execute the deployment script with the following command:
-
-bash
-Copy
-Edit
-node deploy.js
-During the process, you’ll be prompted to enter details for the token deployment:
-
-Token Name: Choose a name for your token (e.g., Seismic).
-
-Token Symbol: Choose a symbol (e.g., SEISM).
-
-Total Supply: Enter the total supply of tokens to be created.
-
-Step 6: Transfer Tokens (Optional) 💸
-After the contract is deployed, you will have the option to transfer tokens to other addresses. If you choose to do so:
-
-Number of Transfers: Define how many transfers you'd like to make.
-
-Amount Per Transfer: Specify the amount of tokens per transfer.
-
-The script will automatically generate random addresses and send tokens to them.
-
-Step 7: Monitor the Process 🖥️
-Throughout the deployment and transfer process, you’ll see logs in your terminal with information about:
-
-The wallet addresses being used for deployment.
-
-Transaction hashes and status updates.
-
-Any errors encountered during the process.
-
-Step 8: Verify on the Blockchain 📡
-After the deployment and transfer process is completed, you can verify the contract and transactions on the blockchain. Use your favorite block explorer (e.g., Etherscan) to check the contract address and transaction details.
-
-Troubleshooting 🛠️
-If you encounter any issues, check the following:
-
-Private Keys: Ensure you have provided valid Ethereum private keys in the .env file.
-
-ETH Balance: Ensure the wallet has enough ETH for gas fees to deploy and transfer tokens.
-
-Solidity Compilation Errors: If the contract has issues compiling, the script will provide specific error messages to help debug.
-
-Additional Information 📚
-Seismic Network: The token is deployed on the Seismic devnet (Chain ID: 5124). Ensure that you are connected to the correct network if you are using a local or different blockchain.
-
-Security: Never share your private keys publicly. Use environment variables to store sensitive data securely.
-
-🌟 Final Words
-Congrats on deploying your token contract and completing the airdrop! 🎉 We hope this project helps you get started with blockchain development and token deployment.
-
-Feel free to star this repository ⭐ if you found it helpful and fork it to make your own customizations!
-
+🐝 License
+MIT License - feel free to use and modify for your own purposes.
