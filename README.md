@@ -1,3 +1,6 @@
+![{C81AAD19-D4A5-4DD1-A71B-6CDB92E89547}](https://github.com/user-attachments/assets/e85faac6-2eee-4270-a11e-d1ffcf1ce1db)
+![{D833AB7D-41EE-4D97-BE09-852251536FA2}](https://github.com/user-attachments/assets/1b2cf4e0-7ff7-4133-80ef-ec102d5a8d20)
+
 Seismic-Juswa-Bot - JUSWA Airdrops
 A multi-wallet deployer and token transfer bot for the Seismic platform, with support for deploying custom ERC-20 tokens and transferring them across multiple wallets.
 
